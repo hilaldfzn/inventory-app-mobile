@@ -7,10 +7,10 @@
 Mengimplementasikan aplikasi yang telah dikembangkan menggunakan Flutter dan menerapkan beberapa konsep yang telah dipelajari di kelas serta menjawab beberapa pertanyaan.
 
 ## **Apa perbedaan utama antara stateless dan stateful widget dalam konteks pengembangan aplikasi Flutter?**
-`Stateless Widget`<br>
+* Stateless Widget<br>
 `Stateless Widget` adalah suatu widget yang tidak mempunyai *state* atau kondisinya tidak bisa berubah-ubah sepanjang program berjalan atau bisa dibilang sebagai entitas yang statis. Widget ini cocok digunakan untuk membuat bagian antarmuka yang tidak berubah-ubah jika dikenakan berbagai macam interaksi kepadanya. Karena widget ini tidak akan berubah-ubah, maka pembuatannya hanya dilakukan sekali saja ketika diperlukan.
 
-`Stateful Widget`<br>
+* Stateful Widget<br>
 Berbeda dengan `Stateless Widget`, `Stateful Widget` adalah suatu widget yang mempunyai *state* atau kondisi yang dapat berubah-ubah atau merupakan entitas yang dinamis. Widget ini cocok digunakan untuk membuat bagian antarmuka yang perlu berubah ketika dikenakan interaksi kepadanya, seperti button yang berubah warna ketika diklik, dan lain sebagainya. Karena widget ini akan berubah-ubah, maka Flutter akan membuat widget tersebut berkali-kali sesuai dengan perubahan yang terjadi kepada widget tersebut untuk memperlihatkan perubahan yang terjadi. Pengelolaan `Stateful Widget` juga sedikit berbeda dengan `Stateless Widget`, yaitu diperlukannya kelas tambahan yang disebut kelas `State` yang berfungsi untuk mengelola *state* dari suatu widget.
 
 ## **Sebutkan seluruh widget yang kamu gunakan untuk menyelesaikan tugas ini dan jelaskan fungsinya masing-masing**

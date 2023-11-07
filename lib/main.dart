@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Inventory Management System',
+      title: 'Inventory App',
       theme: ThemeData(
         // This is the theme of your application.
         //
