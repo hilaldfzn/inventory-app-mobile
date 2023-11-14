@@ -32,7 +32,7 @@ class _ItemFormPageState extends State<ItemFormPage> {
       ),
 
       // Menambahkan drawer yang sudah dibuat di sini
-      drawer: const LeftDrawer(),
+      drawer: const LeftDrawer(), // Tambahkan ini
       body: Form(
         key: _formKey,
         child: SingleChildScrollView(
