@@ -1,13 +1,18 @@
+import 'package:inventory_app_mobile/screens/login.dart';
+import 'package:inventory_app_mobile/screens/item_list.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_app_mobile/screens/menu.dart';
 import 'package:inventory_app_mobile/screens/item_form.dart';
-import 'package:inventory_app_mobile/screens/item_list.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final request = context.watch<CookieRequest>();
+
     return Drawer(
       child: ListView(
         children: [
@@ -54,15 +59,14 @@ class LeftDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.checklist),
+            leading: const Icon(Icons.shopping_basket),
             title: const Text('Show Items'),
-            // Bagian redirection ke ShopFormPage
             onTap: () {
+              // Route menu ke halaman produk
               Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ItemsPage(),
-                  ));
+                context,
+                MaterialPageRoute(builder: (context) => const ItemsPage()),
+              );
             },
           ),
           ListTile(
@@ -77,6 +81,31 @@ class LeftDrawer extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => const ItemFormPage()));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.logout),
+            title: const Text('Logout'),
+            // Bagian redirection ke ShopFormPage
+            onTap: () async {
+              final response = await request.logout(
+                  // "http://dimas-herjunodarpito-tugas.pbp.cs.ui.ac.id/auth/logout/",
+                  "http://127.0.0.1:8000/auth/logout/");
+              String message = response["message"];
+              if (response['status']) {
+                String uname = response["username"];
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text("$message See you again, $uname!"),
+                ));
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                );
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text("$message"),
+                ));
+              }
             },
           ),
         ],
