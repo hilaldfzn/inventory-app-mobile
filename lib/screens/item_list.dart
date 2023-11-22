@@ -88,10 +88,10 @@ class _ItemsPageState extends State<ItemsPage> {
                             ),
                             const SizedBox(height: 10),
                             Text(
-                                "Category : ${snapshot.data![index].fields.category}"),
-                            const SizedBox(height: 10),
+                                "Amount : ${snapshot.data![index].fields.amount}"),
                             Text(
-                                "Amount : ${snapshot.data![index].fields.amount}")
+                                "Description : ${snapshot.data![index].fields.description}"),
+                            const SizedBox(height: 10),
                           ],
                         ),
                       ),
