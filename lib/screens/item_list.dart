@@ -14,6 +14,8 @@ class ItemsPage extends StatefulWidget {
 
 class _ItemsPageState extends State<ItemsPage> {
   Future<List<Product>> fetchProduct(request) async {
+    // var data = await request
+    //     .get('https://muhammad-hilal21-tugas.pbp.cs.ui.ac.id/get-product/');
     var data = await request.get('http://127.0.0.1:8000/get-product/');
 
     // Melakukan konversi data json menjadi object Product

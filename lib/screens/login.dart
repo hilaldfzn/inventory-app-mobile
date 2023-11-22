@@ -78,11 +78,14 @@ class _LoginPageState extends State<LoginPage> {
               onPressed: () async {
                 String username = _usernameController.text;
                 String password = _passwordController.text;
-                final response =
-                    await request.login("http://127.0.0.1:8000/auth/login/", {
-                  'username': username,
-                  'password': password,
-                });
+                final response = await request.login(
+                    "http://127.0.0.1:8000/auth/login/",
+                    // await request.login(
+                    //     "https://muhammad-hilal21-tugas.pbp.cs.ui.ac.id/auth/login/",
+                    {
+                      'username': username,
+                      'password': password,
+                    });
 
                 if (request.loggedIn) {
                   String message = response['message'];

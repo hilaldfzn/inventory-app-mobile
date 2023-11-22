@@ -102,11 +102,13 @@ class _RegisterPageState extends State<RegisterPage> {
                             "Register failed, password verification incorrect.")));
                   return;
                 }
-                final response =
-                    await request.post("http://127.0.0.1:8000/auth/register/", {
-                  'username': username,
-                  'password': password,
-                });
+                final response = await request.post(
+                    "http://127.0.0.1:8000/auth/register/",
+                    //"https://muhammad-hilal21-tugas.pbp.cs.ui.ac.id/auth/register/",
+                    {
+                      'username': username,
+                      'password': password,
+                    });
 
                 if (response['status']) {
                   String message = response['message'];

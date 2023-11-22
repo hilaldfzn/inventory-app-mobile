@@ -88,9 +88,9 @@ class LeftDrawer extends StatelessWidget {
             title: const Text('Logout'),
             // Bagian redirection ke ShopFormPage
             onTap: () async {
-              final response = await request.logout(
-                  // "http://dimas-herjunodarpito-tugas.pbp.cs.ui.ac.id/auth/logout/",
-                  "http://127.0.0.1:8000/auth/logout/");
+              final response =
+                  await request.logout("http://127.0.0.1:8000/auth/logout/");
+              //"https://muhammad-hilal21-tugas.pbp.cs.ui.ac.id/auth/logout/");
               String message = response["message"];
               if (response['status']) {
                 String uname = response["username"];
